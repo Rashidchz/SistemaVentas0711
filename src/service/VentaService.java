@@ -55,6 +55,11 @@ public class VentaService {
             return;
         }
 
+        if (cantidad <= 0) {
+            System.out.println("ERROR: cantidad inválida");
+            return;
+        }
+
         ventaActual.agregarDetalle(producto, cantidad);
         Console.info("Producto agregado: " + producto.getNombre() + " x" + cantidad);
     }
