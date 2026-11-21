@@ -21,6 +21,10 @@ public class ClienteService {
             Console.error("DNI inválido");
             return;
         }
+        if (dni == null || !dni.matches("\\d{8}")) {
+            Console.error("ERROR: Cliente inválido");
+            return;
+        }
 
         Cliente cliente = new Cliente(dni, nombre, tipo);
         clienteRepo.guardar(cliente);
